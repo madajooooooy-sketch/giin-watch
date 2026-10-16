@@ -1,0 +1,92 @@
+[
+  {
+    "name": "野田佳彦",
+    "house": "衆議院",
+    "party": "中道",
+    "district": "千葉14",
+    "speech_count": null,
+    "bill_count": null,
+    "vote_summary": null,
+    "period": "未取得",
+    "updated_at": "2026-09-28",
+    "sources": [
+      {
+        "label": "議院公式名簿",
+        "url": "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/syu/5giin.htm"
+      }
+    ],
+    "source_date_note": "公式名簿の掲載基準日：衆議院2026-09-28／参議院2026-07-14"
+  },
+  {
+    "name": "野田聖子",
+    "house": "衆議院",
+    "party": "自民",
+    "district": "岐阜1",
+    "speech_count": null,
+    "bill_count": null,
+    "vote_summary": null,
+    "period": "未取得",
+    "updated_at": "2026-09-28",
+    "sources": [
+      {
+        "label": "議院公式名簿",
+        "url": "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/syu/5giin.htm"
+      }
+    ],
+    "source_date_note": "公式名簿の掲載基準日：衆議院2026-09-28／参議院2026-07-14"
+  },
+  {
+    "name": "青木愛",
+    "house": "参議院",
+    "party": "立憲",
+    "district": "比例",
+    "speech_count": null,
+    "bill_count": null,
+    "vote_summary": null,
+    "period": "未取得",
+    "updated_at": "2026-07-14",
+    "sources": [
+      {
+        "label": "議院公式名簿",
+        "url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/221/giin.htm"
+      }
+    ],
+    "source_date_note": "公式名簿の掲載基準日：衆議院2026-09-28／参議院2026-07-14"
+  },
+  {
+    "name": "赤松健",
+    "house": "参議院",
+    "party": "自民",
+    "district": "比例",
+    "speech_count": null,
+    "bill_count": null,
+    "vote_summary": null,
+    "period": "未取得",
+    "updated_at": "2026-07-14",
+    "sources": [
+      {
+        "label": "議院公式名簿",
+        "url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/221/giin.htm"
+      }
+    ],
+    "source_date_note": "公式名簿の掲載基準日：衆議院2026-09-28／参議院2026-07-14"
+  },
+  {
+    "name": "足立康史",
+    "house": "参議院",
+    "party": "民主",
+    "district": "比例",
+    "speech_count": null,
+    "bill_count": null,
+    "vote_summary": null,
+    "period": "未取得",
+    "updated_at": "2026-07-14",
+    "sources": [
+      {
+        "label": "議院公式名簿",
+        "url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/221/giin.htm"
+      }
+    ],
+    "source_date_note": "公式名簿の掲載基準日：衆議院2026-09-28／参議院2026-07-14"
+  }
+]
