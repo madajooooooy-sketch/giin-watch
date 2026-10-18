@@ -1,0 +1,35 @@
+name: Check official member candidates
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '20 2 * * 1'
+permissions:
+  contents: read
+jobs:
+  review-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r requirements.txt
+      - name: Fetch official candidate records
+        id: fetch
+        continue-on-error: true
+        run: python tools/fetch_official.py
+      - name: Validate candidates
+        if: always()
+        run: |
+          if [ -f reports/candidates.json ]; then
+            python tools/validate_candidates.py reports/candidates.json
+          else
+            echo 'No candidates generated'; exit 1
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: official-member-candidates-review-only
+          path: reports/
+          retention-days: 30
