@@ -15,9 +15,10 @@ jobs:
         with:
           python-version: '3.12'
       - run: pip install -r requirements.txt
+      - name: Test official roster parsing
+        run: python -m unittest discover -s tools/tests -v
       - name: Fetch official candidate records
         id: fetch
-        continue-on-error: true
         run: python tools/fetch_official.py
       - name: Validate candidates
         if: always()
@@ -27,6 +28,9 @@ jobs:
           else
             echo 'No candidates generated'; exit 1
           fi
+      - name: Verify published files are unchanged
+        if: always()
+        run: git diff --exit-code -- . ":(exclude)reports/**"
       - uses: actions/upload-artifact@v4
         if: always()
         with:
