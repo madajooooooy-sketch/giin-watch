@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T00:01:24.042553+00:00",
+  "generated_at": "2026-10-23T00:29:16.965237+00:00",
   "counts": {
     "衆議院": 464,
     "参議院": 247
@@ -7,10 +7,11 @@
   "total": 711,
   "unique_profiles": 711,
   "official_sources_valid": true,
-  "party_unconfirmed": 711,
+  "party_unconfirmed": 116,
+  "party_confirmed": 595,
   "review_status": "REVIEW_REQUIRED",
   "notes": [
-    "会派と政党は別の項目。政党は推測で補完していません。",
+    "会派と政党は別の項目。政党は公式出典で確認できたものだけ掲載しています。",
     "取得日は公式名簿の掲載基準日や個別確認日を意味しません。",
     "人数は取得時点の掲載数です。全議席の充足を保証しません。"
   ]

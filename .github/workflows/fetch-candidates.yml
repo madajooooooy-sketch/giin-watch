@@ -28,6 +28,9 @@ jobs:
           else
             echo 'No candidates generated'; exit 1
           fi
+      - name: Check official party memberships (review only)
+        if: success()
+        run: python tools/fetch_parties.py --candidates reports/candidates.json
       - name: Verify published files are unchanged
         if: always()
         run: git diff --exit-code -- . ":(exclude)reports/**"

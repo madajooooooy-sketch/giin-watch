@@ -6,6 +6,7 @@ import json
 import re
 from pathlib import Path
 from urllib.parse import urlparse
+from fetch_parties import norm, SOURCES
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -49,18 +50,42 @@ def normalize(rows):
             raise ValueError(f'{house}: {count} below review threshold 100')
     return result, counts
 
+def apply_party_evidence(rows, evidence):
+    known={r['id']:r for r in rows};seen=set()
+    allowed={(party,urlparse(catalog).netloc) for _,party,_,catalog in SOURCES}
+    for item in evidence:
+        member_id=item['member_id']
+        if member_id in seen:raise ValueError('Duplicate party evidence')
+        seen.add(member_id)
+        if member_id not in known:continue  # Old evidence never adds departed members.
+        row=known[member_id];party=item['party'];url=urlparse(item['url'])
+        if url.scheme!='https' or (party,url.netloc) not in allowed:raise ValueError('Unapproved party source')
+        if party=='民主改革の会' and not url.path.startswith('/drp_japan2026/'):raise ValueError('Unapproved party account')
+        if item['house']!=row['house']:raise ValueError('Party evidence house mismatch')
+        if norm(item['source_name'])!=norm(row['name']):
+            peers=[r for r in rows if r['house']==row['house'] and norm(r['kana'])==norm(item['source_kana'])]
+            if not norm(item['source_kana']) or len(peers)!=1 or peers[0]['id']!=member_id:raise ValueError('Ambiguous party evidence identity')
+        checked=datetime.datetime.fromisoformat(item['checked_at'])
+        if checked.tzinfo is None:raise ValueError('Party check time must have a timezone')
+        row.update(party=party,party_status='政党公式出典で確認',party_checked_at=item['checked_at'],party_sources=[{'label':party+'公式議員情報','url':item['url']}])
+    return rows
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('candidates', type=Path)
     parser.add_argument('--output', type=Path, default=ROOT / 'review')
+    parser.add_argument('--party-evidence',type=Path,default=ROOT/'review/party-evidence.json')
     args = parser.parse_args()
     rows, counts = normalize(json.loads(args.candidates.read_text(encoding='utf-8')))
+    if args.party_evidence.exists():
+        apply_party_evidence(rows,json.loads(args.party_evidence.read_text(encoding='utf-8')))
     report = {
         'generated_at': datetime.datetime.now(datetime.timezone.utc).isoformat(),
         'counts': counts, 'total': len(rows), 'unique_profiles': len(rows),
-        'official_sources_valid': True, 'party_unconfirmed': len(rows),
+        'official_sources_valid': True, 'party_unconfirmed': sum(r['party'] is None for r in rows),
+        'party_confirmed': sum(r['party'] is not None for r in rows),
         'review_status': 'REVIEW_REQUIRED',
-        'notes': ['会派と政党は別の項目。政党は推測で補完していません。',
+        'notes': ['会派と政党は別の項目。政党は公式出典で確認できたものだけ掲載しています。',
                   '取得日は公式名簿の掲載基準日や個別確認日を意味しません。',
                   '人数は取得時点の掲載数です。全議席の充足を保証しません。'],
     }
