@@ -1,0 +1,105 @@
+{
+  "checked_at": "2026-10-23T00:28:11.221354+00:00",
+  "status": "REVIEW_REQUIRED",
+  "confirmed": 595,
+  "unconfirmed": 116,
+  "by_party": {
+    "自由民主党": 416,
+    "日本維新の会": 55,
+    "国民民主党": 53,
+    "日本共産党": 11,
+    "チームみらい": 12,
+    "参政党": 30,
+    "民主改革の会": 18
+  },
+  "source_results": [
+    {
+      "party": "自由民主党",
+      "catalog_url": "https://www.jimin.jp/member/search/",
+      "data_url": "https://www.jimin.jp/member/data/member.json",
+      "source_sha256": "3d16bea0e55f6409bed959b0cc37e5f746b4ea404dce0945a48e0c4392127d6b",
+      "extracted": 416,
+      "matched": 416,
+      "unmatched": []
+    },
+    {
+      "party": "日本維新の会",
+      "catalog_url": "https://o-ishin.jp/member/shugiin/",
+      "data_url": "https://o-ishin.jp/member/shugiin/",
+      "source_sha256": "abdfa1b4cc33de183d465b6004283c95acd8faaddfc802b0b6ce9ea8e1419fe4",
+      "extracted": 36,
+      "matched": 36,
+      "unmatched": []
+    },
+    {
+      "party": "日本維新の会",
+      "catalog_url": "https://o-ishin.jp/member/sangiin/",
+      "data_url": "https://o-ishin.jp/member/sangiin/",
+      "source_sha256": "29aeac0ef049b2aed01597ec16d604bb246e325ca76f0b71e169991c08c0f168",
+      "extracted": 19,
+      "matched": 19,
+      "unmatched": []
+    },
+    {
+      "party": "国民民主党",
+      "catalog_url": "https://new-kokumin.jp/member",
+      "data_url": "https://new-kokumin.jp/member",
+      "source_sha256": "b40e54950494938d7c9a384327ccc1238a27defbb6f81f42b6dad7db8168f8be",
+      "extracted": 53,
+      "matched": 53,
+      "unmatched": []
+    },
+    {
+      "party": "日本共産党",
+      "catalog_url": "https://www.jcp.or.jp/diet_member/",
+      "data_url": "https://www.jcp.or.jp/diet_member/",
+      "source_sha256": "fa7c390292ce61f8cf6e228d97c05271fd7ef3876879906d87ed5b183ebd7180",
+      "extracted": 11,
+      "matched": 11,
+      "unmatched": []
+    },
+    {
+      "party": "チームみらい",
+      "catalog_url": "https://team-mir.ai/about",
+      "data_url": "https://team-mir.ai/about",
+      "source_sha256": "3df04f23e5c0c7fae827395265fd32c2f6c5d3c5e83af518e82e97a780d5e918",
+      "extracted": 12,
+      "matched": 12,
+      "unmatched": []
+    },
+    {
+      "party": "参政党",
+      "catalog_url": "https://sanseito.jp/member/",
+      "data_url": "https://sanseito.jp/nppoj/wp-content/themes/wp_310/member_for_newpage.json",
+      "source_sha256": "84f26847e08744142a9ddf0e16de6f07d64845381aa71cd2d554acaad9927805",
+      "extracted": 5,
+      "matched": 5,
+      "unmatched": []
+    },
+    {
+      "party": "参政党",
+      "catalog_url": "https://sanseito.jp/member/",
+      "data_url": "https://sanseito.jp/2020/wp-content/themes/twentynineteen/member.json",
+      "source_sha256": "b4861b93ab119d3b84dd4b2e0d7aa3ac312b0b4b4b63c00d545f816053c41d56",
+      "extracted": 29,
+      "matched": 29,
+      "unmatched": []
+    },
+    {
+      "party": "民主改革の会",
+      "catalog_url": "https://note.com/drp_japan2026/n/na56baf0ab77f",
+      "data_url": "https://note.com/drp_japan2026/n/na56baf0ab77f",
+      "source_sha256": "d1a2470602cfe279319cac78e1b6f7962ff4aeaa0febc7232ae432cab10a4ad8",
+      "extracted": 18,
+      "matched": 18,
+      "unmatched": []
+    }
+  ],
+  "errors": [],
+  "conflicts": [],
+  "changes": [],
+  "new_member_ids": [],
+  "missing_member_ids": [],
+  "not_reconfirmed": [],
+  "note": "未一致・取得失敗は離党の根拠ではありません。新しい政党の出典はSOURCESに登録して再取得します。公開データを自動変更しません。"
+}
